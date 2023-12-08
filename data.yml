@@ -4,11 +4,26 @@ jobs:
   Job-6:
     excludeSelector: ""
     id: 6
-    includeSelector: "+ {location: WORK name: FCT_LINEITEM_ORDERS_DIM_LOOKUP}"
+    includeSelector: "+{ location: WORK name: FCT_LINEITEM_ORDERS_DIM_LOOKUP }"
     name: Job1
     steps: []
     subgraphs: []
-locations: {}
+locations:
+  SRC:
+    mappingDefinitions:
+      "15":
+        database: SNOWFLAKE_SAMPLE_DATA
+        schema: TPCH_SF1
+  WORK:
+    mappingDefinitions:
+      "15":
+        database: JEANPAUL
+        schema: WORKDEV
+  WORKPROD:
+    mappingDefinitions:
+      "15":
+        database: JEANPAUL
+        schema: WORKPROD
 macros: {}
 packages: {}
 projects: {}
